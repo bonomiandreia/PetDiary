@@ -16,6 +16,6 @@ export const ROUTES: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(ROUTES)],
-exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

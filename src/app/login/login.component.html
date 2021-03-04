@@ -1,1 +1,10 @@
 <p>login works!</p>
+
+
+<form [formGroup]="formLogin" (ngSubmit)="sendData()">
+    <label for="fname">email</label><br>
+    <input type="text" formControlName="email"><br>
+    <label for="lname">password:</label><br>
+    <input type="password" id="password" name="fpassword" formControlName="password">
+    <button [disabled]="!formLogin.valid">Enviar dados</button>
+</form>
