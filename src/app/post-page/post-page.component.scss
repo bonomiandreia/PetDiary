@@ -9,15 +9,32 @@
     &__box-button {
         clear: both;
         display: block;
+        width: 100%;
+        height: 35px;
+    }
+
+    &__title {
+        font-size: 1.5em;
+        color: #7CD5FD;
+        font-weight: bold;
+        &-center {
+            text-align: center;
+            margin: 10px;
+        }
     }
 
     &__button {
         width: 100%;
+        float: left;
     }
 
     &__white-card {
         height: 90vh;
         margin: 10px auto;
+        background: #f5f5f5;
+    }
+    &__float {
+        float: right;
     }
     &__text-area {
         width: 100%;

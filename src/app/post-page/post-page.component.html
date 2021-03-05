@@ -1,11 +1,20 @@
 
 <div class="c-card">
     <div class="c-card__box-button">
-        <app-logout class="c-card__button" align="end"></app-logout>
+        <app-logout align="end" class="c-card__button"></app-logout>
     </div>
     <mat-card class="c-card__white-card">
-        <textarea class="c-card__text-area" name="textarea"></textarea>
-        <button>POST IT NOW!</button>
+        <mat-card>
+            <div class="c-card__title-center">
+                <span class="c-card__title">PET DIARY!</span>
+            </div>
+            <textarea class="c-card__text-area" name="textarea"></textarea>
+            <div class="c-card__box-button">
+                <div class="c-card__button">
+                    <button class="c-card__float">POST IT NOW!</button>
+                </div>
+            </div>
+        </mat-card>
         <app-posts 
             class="c-card__table"
             [list]="listPosts"
