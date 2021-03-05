@@ -1,12 +1,37 @@
  .c-table {
-    width: 100%;
     -webkit-box-shadow: 17px 7px 30px -13px rgba(156,156,156,1);
     -moz-box-shadow: 17px 7px 30px -13px rgba(156,156,156,1);
     box-shadow: 17px 7px 30px -13px rgba(156,156,156,1);
     border-radius: 30px;
+    width: 100%;
+    margin: auto;
+
+    &__mobile-title {
+        display: none
+    }
 
     &__title {
         font-size: 1.2em;
         color: #7CD5FD;
     }
  }
+
+
+
+@media screen and (max-width: 768px) {
+    .mat-header-row {
+        display: none;
+    }
+
+    .c-table {
+    
+        &__mobile-title {
+             display: inline-block !important;
+        }
+    
+        &__title {
+            font-size: 1.2em;
+            color: #7CD5FD;
+        }
+     }
+}

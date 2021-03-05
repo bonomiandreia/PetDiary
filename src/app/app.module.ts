@@ -13,7 +13,10 @@ import { AuthGuardService } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
 import { TokenInterceptor } from './services/token-interceptor.service';
 import { MatTableModule } from '@angular/material/table';
-import { PostPageComponent } from './post-page/post-page.component'  
+import { PostPageComponent } from './post-page/post-page.component';
+import { LogoutComponent } from './logout/logout.component'  
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -21,7 +24,8 @@ import { PostPageComponent } from './post-page/post-page.component'
     AppComponent,
     LoginComponent,
     PostsComponent,
-    PostPageComponent
+    PostPageComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -30,8 +34,11 @@ import { PostPageComponent } from './post-page/post-page.component'
     HttpClientModule,
     BrowserAnimationsModule,
     MatTableModule,
+    MatCardModule,
+    MatGridListModule
   ],
-  providers: [LoginService, 
+  providers: [
+    LoginService, 
     AuthGuardService, 
     AuthService,
     {

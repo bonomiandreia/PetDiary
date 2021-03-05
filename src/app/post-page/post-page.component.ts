@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../services/posts/posts.service';
+import { Posts } from '../models/post';
 
 @Component({
   selector: 'app-post-page',
@@ -10,7 +11,7 @@ export class PostPageComponent implements OnInit {
 
   constructor(private posts: PostsService) { }
 
-  listPosts;
+  listPosts: Posts[];
   colums = ['id', 'date', 'text'];
 
   ngOnInit(): void {

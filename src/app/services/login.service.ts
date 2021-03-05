@@ -12,4 +12,8 @@ export class LoginService {
   login(login: Login) {
     return this.http.post(this.url+'users/auth', login)
   }
+
+  logout() {
+    localStorage.removeItem('token');
+  }
 }

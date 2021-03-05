@@ -1,25 +1,27 @@
-<table class="c-table" mat-table [dataSource]="list">
+<mat-table class="c-table" mat-table [dataSource]="list">
     <ng-container matColumnDef="id">
-        <th class="c-table__title" mat-header-cell *matHeaderCellDef>ID</th>
-        <td mat-cell *matCellDef="let element">
+        <mat-header-cell class="c-table__title" *matHeaderCellDef> ID </mat-header-cell>
+        <span class="c-table__mobile-title">ID</span>
+        <mat-cell *matCellDef="let element"> 
             {{ element?._id }}
-        </td>
+        </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="date">
-        <th class="c-table__title" mat-header-cell *matHeaderCellDef>DATA</th>
-        <td mat-cell *matCellDef="let element">
+        <mat-header-cell class="c-table__title" *matHeaderCellDef> DATA </mat-header-cell>
+        <span class="c-table__mobile-title">DATA</span>
+        <mat-cell *matCellDef="let element"> 
             {{ element?.date | date: 'dd.MM' }}
-        </td>
+        </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="text">
-        <th class="c-table__title" mat-header-cell *matHeaderCellDef>MENSAGE</th>
-        <td mat-cell *matCellDef="let element">
+        <mat-header-cell class="c-table__title" *matHeaderCellDef> TEXT </mat-header-cell>
+        <span class="c-table__mobile-title">TEXT</span>
+        <mat-cell *matCellDef="let element"> 
             {{ element?.text }}
-        </td>
+        </mat-cell>
     </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

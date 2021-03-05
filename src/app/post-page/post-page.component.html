@@ -1,4 +1,15 @@
-<app-posts 
-[list]="listPosts"
-[displayedColumns]="colums">
-</app-posts>
+
+<div class="c-card">
+    <div class="c-card__box-button">
+        <app-logout class="c-card__button" align="end"></app-logout>
+    </div>
+    <mat-card class="c-card__white-card">
+        <textarea class="c-card__text-area" name="textarea"></textarea>
+        <button>POST IT NOW!</button>
+        <app-posts 
+            class="c-card__table"
+            [list]="listPosts"
+            [displayedColumns]="colums">
+        </app-posts>
+    </mat-card>
+</div>
