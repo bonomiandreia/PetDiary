@@ -1,0 +1,12 @@
+ .c-table {
+    width: 100%;
+    -webkit-box-shadow: 17px 7px 30px -13px rgba(156,156,156,1);
+    -moz-box-shadow: 17px 7px 30px -13px rgba(156,156,156,1);
+    box-shadow: 17px 7px 30px -13px rgba(156,156,156,1);
+    border-radius: 30px;
+
+    &__title {
+        font-size: 1.2em;
+        color: #7CD5FD;
+    }
+ }

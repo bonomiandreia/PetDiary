@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PostsService } from '../services/posts/posts.service';
 
 @Component({
   selector: 'app-posts',
@@ -8,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class PostsComponent implements OnInit {
 
   constructor() { }
+  @Input() list;
+  @Input() displayedColumns;
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

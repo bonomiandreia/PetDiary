@@ -12,19 +12,24 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
 import { TokenInterceptor } from './services/token-interceptor.service';
+import { MatTableModule } from '@angular/material/table';
+import { PostPageComponent } from './post-page/post-page.component'  
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    PostsComponent
+    PostsComponent,
+    PostPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTableModule,
   ],
   providers: [LoginService, 
     AuthGuardService, 

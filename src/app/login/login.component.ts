@@ -11,7 +11,7 @@ import {
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   formLogin: FormGroup;
   token;
   id;
@@ -23,12 +23,13 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
-
-  sendData(): void {
+  enter(): void {
     if (this.formLogin.value) {
-        this.login.login(this.formLogin.value.email, this.formLogin.value.password).subscribe((data) => {
+      const body = {
+        "email": this.formLogin.value.email,
+        "password": this.formLogin.value.password
+      }
+      this.login.login(body).subscribe((data) => {
           this.token = data['token'];
           this.id = data['auth']['_id'];
           localStorage.setItem('token', this.token);
