@@ -9,7 +9,11 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 # RUN backend
 clone: https://github.com/bonomiandreia/pet
 
-node app.jss
+node app.js
+
+user: "doesntexist@gmail.com",
+
+password: "loren"
 
 ## Code scaffolding
 
