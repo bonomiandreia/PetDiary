@@ -10,25 +10,33 @@
     }
 }
 
-.mobile-title {
+.mobile-label {
     display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media(max-width: 600px) {
     .mobile-label {
-        width: 80px;
-        display: block;
-        font-weight: bold;
+      width: 42px;
+      display: inline-block;
+    font-weight: bold;
     }
-    
-      .mat-header-row {
-        display: none;
-      }
-    
-      .mat-row { 
-        flex-direction: column;
-        align-items: start;
-        padding: 8px 24px;
-      }
+  
+    .mat-header-row {
+      display: none;
+    }
+  
+    .mat-row { 
+      flex-direction: column;
+      width: 100%;
+      align-items: start;
+      padding: 8px 24px;
+    }
 
-}
+    .mat-cell {
+        width: 100%;
+    }
+
+    .mat-cell:first-of-type {
+        padding: 0;
+    }
+  }

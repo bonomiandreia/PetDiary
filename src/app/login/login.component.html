@@ -1,7 +1,18 @@
-<form [formGroup]="formLogin" (ngSubmit)="enter()">
-    <label for="fname">email</label><br>
-    <input type="text" formControlName="email"><br>
-    <label for="lname">password:</label><br>
-    <input type="password" id="password" name="fpassword" formControlName="password">
-    <button [disabled]="!formLogin.valid">Enviar dados</button>
-</form>
+<div class="c-card">
+    <mat-card class="c-card__white-card">
+        <mat-grid-list cols="2">
+            <mat-grid-tile>
+            <form [formGroup]="formLogin" (ngSubmit)="enter()">
+                <span class="c-card__title">PET DIARY!</span><br>
+                <input placeholder="email here..." type="text" formControlName="email"><br>
+                <input placeholder="password here..." type="password" id="password" name="fpassword" formControlName="password">
+                <br>
+                <button [disabled]="!formLogin.valid">ENTRAR</button>
+            </form>
+        </mat-grid-tile>
+            <mat-grid-tile>
+                <img src="../../assets/dog.png">
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card>
+</div>

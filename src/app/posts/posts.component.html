@@ -2,26 +2,23 @@
     <ng-container matColumnDef="id">
         <mat-header-cell class="c-table__title" *matHeaderCellDef> ID </mat-header-cell>
         <mat-cell *matCellDef="let element"> 
-            <span class="mobile-title">ID</span>
-            {{ element?._id }}
+            <span class="mobile-label c-table__title">ID:</span>{{ element?._id }}
         </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="date">
-        <mat-header-cell class="c-table__title" *matHeaderCellDef> DATA </mat-header-cell>
+        <mat-header-cell class="c-table__title" *matHeaderCellDef> DATE </mat-header-cell>
         <mat-cell *matCellDef="let element"> 
-            <span class="mobile-title">DATA</span>
-            {{ element?.date | date: 'dd.MM' }}
+            <span class="mobile-label c-table__title">DATE:</span> {{ element?.date | date: 'dd.MM' }}
         </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="text">
         <mat-header-cell class="c-table__title" *matHeaderCellDef> TEXT </mat-header-cell>
         <mat-cell *matCellDef="let element"> 
-            <span class="mobile-title">TEXT</span>
-            {{ element?.text }}
+          <span class="mobile-label c-table__title">TEXT:</span> {{element?.text}} 
         </mat-cell>
-    </ng-container>
+      </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
