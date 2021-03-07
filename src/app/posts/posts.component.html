@@ -22,6 +22,6 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
-<div #empty>
-    <span>Doesnt exist posts yet! ):</span>
-</div>
+<ng-template class="c-card__title-center" #empty>
+    <span class="c-card__title">Doesnt exist posts yet!</span>
+<ng-template>

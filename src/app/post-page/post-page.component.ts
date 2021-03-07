@@ -18,7 +18,7 @@ export class PostPageComponent implements OnInit {
     });
   }
 
-  listPosts: Posts[];
+  listPosts: Posts[] = [];
   colums = ['id', 'date', 'text'];
 
   ngOnInit(): void {
