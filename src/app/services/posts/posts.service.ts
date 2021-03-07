@@ -13,4 +13,8 @@ export class PostsService {
   getPostsById(userId: string): Observable<Posts[]> {
     return this.http.get<Posts[]>(this.url+'posts/'+userId);
   }
+
+  postAddPost(body): any {
+    return this.http.post(this.url+'posts/create', body);
+  }
 }

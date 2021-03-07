@@ -1,4 +1,4 @@
-<mat-table class="c-table" mat-table [dataSource]="list">
+<mat-table class="c-table" mat-table [dataSource]="list" *ngIf="list.length != 0; else empty">
     <ng-container matColumnDef="id">
         <mat-header-cell class="c-table__title" *matHeaderCellDef> ID </mat-header-cell>
         <mat-cell *matCellDef="let element"> 
@@ -22,3 +22,6 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
+<div #empty>
+    <span>Doesnt exist posts yet! ):</span>
+</div>

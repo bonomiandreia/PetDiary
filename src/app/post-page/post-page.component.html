@@ -8,12 +8,14 @@
             <div class="c-card__title-center">
                 <span class="c-card__title">POST YOUR DAILY HERE!</span>
             </div>
-            <textarea class="c-card__text-area" name="textarea"></textarea>
-            <div class="c-card__box-button">
-                <div class="c-card__button">
-                    <button class="c-card__float">POST IT NOW!</button>
+            <form [formGroup]="formPosts" (ngSubmit)="postDaily()">
+                <textarea class="c-card__text-area" name="textarea" formControlName="postArea"></textarea>
+                <div class="c-card__box-button">
+                    <div class="c-card__button">
+                        <button class="c-card__float">POST IT NOW!</button>
+                    </div>
                 </div>
-            </div>
+            </form>
         </mat-card>
         <app-posts 
             class="c-card__table"
