@@ -6,31 +6,26 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { PostPageComponent } from './posts/post-page.component';
-import { PostsService } from 'src/app/services/posts/posts.service';
-import { PostsComponent } from 'src/app/components/posts/posts.component';
-import { LogoutComponent } from '../../components/logout/logout.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PostsPageRoutingModule } from './posts-page.routing.module';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from '../../services/login/login.service';
+import { LoginPageRoutingModule } from './login-page.routing.module';
 
 @NgModule({
     imports: [
         CommonModule,
-        ReactiveFormsModule,
         MatTableModule,
         MatCardModule,
         MatGridListModule,
         ReactiveFormsModule,
         HttpClientModule,
-        PostsPageRoutingModule,
+        LoginPageRoutingModule,
     ],
     declarations: [
-        PostPageComponent,
-        PostsComponent,
-        LogoutComponent
+        LoginComponent,
     ],
-    exports: [PostsComponent],
-    providers: [PostsService, AuthService],
+    exports: [LoginComponent],
+    providers: [LoginService, AuthService],
 })
-export class PostsModule {}
+export class LoginModule {}

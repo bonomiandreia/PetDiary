@@ -9,20 +9,14 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
 import { MatTableModule } from '@angular/material/table';
-import { LogoutComponent } from './components/logout/logout.component'  
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { PostsComponent } from './components/posts/posts.component';
 import { TokenInterceptor } from './interceptor/token-interceptor';
-import { LoginService } from './services/login/login.service';
-import { LoginComponent } from './pages/login-page/login/login.component';
-import { PostPageComponent } from './pages/post-page/posts/post-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +29,6 @@ import { PostPageComponent } from './pages/post-page/posts/post-page.component';
     MatGridListModule
   ],
   providers: [
-    LoginService, 
     AuthGuardService, 
     AuthService,
     {

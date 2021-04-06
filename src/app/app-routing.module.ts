@@ -5,11 +5,11 @@ import { LoginComponent } from './pages/login-page/login/login.component';
 import { PostsModule } from './pages/post-page/posts-page.module';
 
 export const ROUTES: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', loadChildren: () => import('./pages/login-page/login-page.module').then(module => module.LoginModule)},
   { 
     path: 'posts', 
     loadChildren: () => import('./pages/post-page/posts-page.module').then(module => module.PostsModule),
-    canActivate: [AuthGuard] 
+    canLoad: [AuthGuard] 
   },
   { path: '**', redirectTo: '' }
 ];
