@@ -6,11 +6,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './login.component';
 import { LoginService } from '../../services/login/login.service';
-import { LoginPageRoutingModule } from './login-page.routing.module';
+import { LoginPageRoutingModule } from './login.routing.module';
 
 @NgModule({
     imports: [
@@ -19,7 +18,6 @@ import { LoginPageRoutingModule } from './login-page.routing.module';
         MatCardModule,
         MatGridListModule,
         ReactiveFormsModule,
-        HttpClientModule,
         LoginPageRoutingModule,
     ],
     declarations: [

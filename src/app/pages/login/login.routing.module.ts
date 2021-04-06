@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PostPageComponent } from './posts/post-page.component';
+import { LoginComponent } from './login.component';
 
 export const ROUTES: Routes = [
-  { path: '', component: PostPageComponent }
+  { path: '', component: LoginComponent }
 ];
 
 @NgModule({
@@ -11,4 +11,4 @@ export const ROUTES: Routes = [
 
 exports: [RouterModule],
 })
-export class PostsPageRoutingModule { }
+export class LoginPageRoutingModule { }

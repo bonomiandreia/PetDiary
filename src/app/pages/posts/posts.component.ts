@@ -8,8 +8,8 @@ import { PostsService } from 'src/app/services/posts/posts.service';
 
 @Component({
   selector: 'app-post-page',
-  templateUrl: './post-page.component.html',
-  styleUrls: ['./post-page.component.scss']
+  templateUrl: './posts.component.html',
+  styleUrls: ['./posts.component.scss']
 })
 export class PostPageComponent implements OnInit {
   formPosts: FormGroup;
