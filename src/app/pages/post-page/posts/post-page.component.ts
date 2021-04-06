@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { PostsService } from '../../services/posts/posts.service';
-import { Posts } from '../../models/post.model';
+import { Posts } from 'src/app/models/post.model';
+import { PostsService } from 'src/app/services/posts/posts.service';
+
+
 
 @Component({
   selector: 'app-post-page',

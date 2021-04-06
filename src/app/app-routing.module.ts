@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
-import { PostPageComponent } from './pages/post-page/post-page.component';
-import { LoginComponent } from './pages/login-page/login.component';
+import { LoginComponent } from './pages/login-page/login/login.component';
+import { PostPageComponent } from './pages/post-page/posts/post-page.component';
 
 export const ROUTES: Routes = [
   { path: '', component: LoginComponent },

@@ -12,11 +12,11 @@ import { MatTableModule } from '@angular/material/table';
 import { LogoutComponent } from './components/logout/logout.component'  
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { PostPageComponent } from './pages/post-page/post-page.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { TokenInterceptor } from './interceptor/token-interceptor';
 import { LoginService } from './services/login/login.service';
-import { LoginComponent } from './pages/login-page/login.component';
+import { LoginComponent } from './pages/login-page/login/login.component';
+import { PostPageComponent } from './pages/post-page/posts/post-page.component';
 
 
 @NgModule({
