@@ -9,7 +9,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
 import { MatTableModule } from '@angular/material/table';
-import { LogoutComponent } from './components/posts/logout/logout.component'  
+import { LogoutComponent } from './components/logout/logout.component'  
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { PostPageComponent } from './pages/post-page/post-page.component';
