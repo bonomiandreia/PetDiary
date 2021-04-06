@@ -23,9 +23,6 @@ import { PostPageComponent } from './pages/post-page/posts/post-page.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    PostsComponent,
-    PostPageComponent,
-    LogoutComponent
   ],
   imports: [
     BrowserModule,

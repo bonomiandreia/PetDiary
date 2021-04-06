@@ -43,8 +43,7 @@ export class PostPageComponent implements OnInit {
     }
     if (this.formPosts.value) { 
       this.posts.postAddPost(body).subscribe((data) => {
-        //this.getPosts();
-        console.log(data)
+        this.getPosts();
       })
     }
 

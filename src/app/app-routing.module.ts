@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
 import { LoginComponent } from './pages/login-page/login/login.component';
-import { PostPageComponent } from './pages/post-page/posts/post-page.component';
+import { PostsModule } from './pages/post-page/posts-page.module';
 
 export const ROUTES: Routes = [
   { path: '', component: LoginComponent },
   { 
     path: 'posts', 
-    component: PostPageComponent, 
+    loadChildren: () => import('./pages/post-page/posts-page.module').then(module => module.PostsModule),
     canActivate: [AuthGuard] 
   },
   { path: '**', redirectTo: '' }
@@ -16,6 +16,6 @@ export const ROUTES: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(ROUTES)],
-exports: [RouterModule],
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

@@ -13,8 +13,8 @@ import {
 })
 export class LoginComponent {
   formLogin: FormGroup;
-  token;
-  id;
+  token: string;
+  id: string;
 
   constructor(private fb: FormBuilder, private login: LoginService, public router: Router) { 
     this.formLogin = this.fb.group({
