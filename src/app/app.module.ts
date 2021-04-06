@@ -4,19 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './login/login.component';
-import { PostsComponent } from './posts/posts.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LoginService } from './services/login.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
-import { TokenInterceptor } from './services/token-interceptor.service';
 import { MatTableModule } from '@angular/material/table';
-import { PostPageComponent } from './post-page/post-page.component';
-import { LogoutComponent } from './logout/logout.component'  
+import { LogoutComponent } from './components/posts/logout/logout.component'  
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { PostPageComponent } from './pages/post-page/post-page.component';
+import { PostsComponent } from './components/posts/posts.component';
+import { TokenInterceptor } from './interceptor/token-interceptor';
+import { LoginService } from './services/login/login.service';
+import { LoginComponent } from './pages/login-page/login.component';
 
 
 @NgModule({

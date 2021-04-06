@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsService } from '../services/posts/posts.service';
-import { Posts } from '../models/post';
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PostsService } from '../../services/posts/posts.service';
+import { Posts } from '../../models/post.model';
 
 @Component({
   selector: 'app-post-page',
@@ -40,7 +41,8 @@ export class PostPageComponent implements OnInit {
     }
     if (this.formPosts.value) { 
       this.posts.postAddPost(body).subscribe((data) => {
-        this.getPosts();
+        //this.getPosts();
+        console.log(data)
       })
     }
 
