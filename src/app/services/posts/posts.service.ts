@@ -8,7 +8,6 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class PostsService {
-  url = 'http://localhost:3000/'
   constructor(private http: HttpClient) { }
 
   getPostsById(userId: string): Observable<Posts[]> {
