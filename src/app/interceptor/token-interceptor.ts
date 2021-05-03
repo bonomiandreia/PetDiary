@@ -3,21 +3,31 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpErrorResponse
 } from '@angular/common/http';
 import { AuthService } from '../auth/auth.service';
 import { Observable } from 'rxjs';
-
+import { AuthQuery } from '../state/auth.query';
+import {  switchMap, take } from 'rxjs/operators';
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-  constructor(public auth: AuthService) {}
+  token$;
+  constructor(public auth: AuthService, public authQuery: AuthQuery) {
+    this.token$ = this.authQuery.token$;
+  }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    
-    request = request.clone({
-      setHeaders: {
-        auth: `${this.auth.getToken()}`
-      }
-    });
-    return next.handle(request);
+    return this.token$.pipe(
+      take(1),
+      switchMap(token => {
+          let headers = request.headers;
+          headers = headers.set('auth', `${token}`);
+          const requestCopy = request.clone({
+              headers,
+          });
+
+          return next.handle(requestCopy);
+      })
+  );
   }
 }

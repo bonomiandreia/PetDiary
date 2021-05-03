@@ -1,12 +1,24 @@
 import { Injectable } from '@angular/core';
-import { QueryEntity } from '@datorama/akita';
-import { AuthStore, AuthState } from './auth.store';
+import { Query, StoreConfig } from '@datorama/akita';
 
-@Injectable({ providedIn: 'root' })
-export class AuthQuery extends QueryEntity<AuthState> {
+// store components
+import { AuthState, AuthStore } from './auth.store';
 
-  constructor(protected store: AuthStore) {
-    super(store);
-  }
+// rxjs
+import { Observable } from 'rxjs';
 
+@Injectable({
+  providedIn: 'root'
+})
+@StoreConfig({ name: 'token' })
+export class AuthQuery extends Query<AuthState> {
+    readonly isLogged$: Observable<boolean>;
+    readonly token$: Observable<string>;
+
+    constructor(protected store: AuthStore) {
+        super(store);
+
+        this.isLogged$ = this.select(state => !!state.token);
+        this.token$ = this.select('token');
+    }
 }

@@ -8,7 +8,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login.component';
-import { LoginService } from '../../services/login/login.service';
 import { LoginPageRoutingModule } from './login.routing.module';
 
 @NgModule({
@@ -24,6 +23,6 @@ import { LoginPageRoutingModule } from './login.routing.module';
         LoginComponent,
     ],
     exports: [LoginComponent],
-    providers: [LoginService, AuthService],
+    providers: [AuthService],
 })
 export class LoginModule {}

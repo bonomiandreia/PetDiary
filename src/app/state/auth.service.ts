@@ -18,4 +18,8 @@ export class AuthServiceAkita {
   })
   }
 
+  logout() {
+    return this.authStore.reset();
+  }
+
 }

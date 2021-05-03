@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from '../../services/login/login.service';
+import { AuthServiceAkita } from '../../state/auth.service';
 import {
   FormBuilder,
   FormGroup,
@@ -16,7 +16,7 @@ export class LoginComponent {
   token: string;
   id: string;
 
-  constructor(private fb: FormBuilder, private login: LoginService, public router: Router) { 
+  constructor(private fb: FormBuilder, public router: Router, public login: AuthServiceAkita) { 
     this.formLogin = this.fb.group({
       email: ['', Validators.compose([Validators.email])],
       password: ['', Validators.compose([Validators.required])],
@@ -29,13 +29,7 @@ export class LoginComponent {
         "email": this.formLogin.value.email,
         "password": this.formLogin.value.password
       }
-      this.login.login(body).subscribe((data) => {
-          this.token = data['token'];
-          this.id = data['auth']['_id'];
-          localStorage.setItem('token', this.token);
-          localStorage.setItem('userId', this.id);
-          this.router.navigate(['posts']);
-      })
+      this.login.login(body);
     }
   }
 

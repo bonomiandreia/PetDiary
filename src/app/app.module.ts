@@ -12,6 +12,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { TokenInterceptor } from './interceptor/token-interceptor';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { environment } from '../environments/environment';
+import { AuthQuery } from './state/auth.query';
 
 
 @NgModule({
@@ -19,6 +22,8 @@ import { TokenInterceptor } from './interceptor/token-interceptor';
     AppComponent,
   ],
   imports: [
+
+  environment.production ? [] : AkitaNgDevtools,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
@@ -31,6 +36,7 @@ import { TokenInterceptor } from './interceptor/token-interceptor';
   providers: [
     AuthGuardService, 
     AuthService,
+    AuthQuery,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
