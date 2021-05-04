@@ -9,7 +9,7 @@ import {
 import { AuthService } from '../auth/auth.service';
 import { Observable } from 'rxjs';
 import { AuthQuery } from '../state/auth.query';
-import {  switchMap, take } from 'rxjs/operators';
+import {  switchMap } from 'rxjs/operators';
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
   token$;
@@ -18,7 +18,6 @@ export class TokenInterceptor implements HttpInterceptor {
   }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return this.token$.pipe(
-      take(1),
       switchMap(token => {
           let headers = request.headers;
           headers = headers.set('auth', `${token}`);
