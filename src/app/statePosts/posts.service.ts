@@ -15,6 +15,7 @@ export class PostsService {
   }
 
   getPostsById(userId: string): Observable<Posts[]> {
+    
     return this.http.get<Posts[]>(`${environment.url}posts/${userId}`);
   }
 

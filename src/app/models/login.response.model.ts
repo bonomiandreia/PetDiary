@@ -1,4 +1,6 @@
 export interface LoginResponse {
     token: string,
-    _id: string
+    auth: {
+        _id: string,
+    }
 }

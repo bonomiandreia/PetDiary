@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Posts } from 'src/app/models/post.model';
 import { PostsService } from 'src/app/services/posts/posts.service';
+import { AuthQuery } from '../../state/auth.query';
+import { switchMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 
 
@@ -13,12 +16,15 @@ import { PostsService } from 'src/app/services/posts/posts.service';
 })
 export class PostPageComponent implements OnInit {
   formPosts: FormGroup;
-  id = localStorage.getItem('userId');
-  constructor(private posts: PostsService, private fb: FormBuilder) { 
+  id;
+  idUser$;
+  constructor(private posts: PostsService, private fb: FormBuilder, public authQuery: AuthQuery) { 
     
     this.formPosts = this.fb.group({
       postArea: ['', Validators.compose([Validators.required])],
     });
+    this.idUser$ = this.authQuery.idUser$;
+    this.idUser$.subscribe(id => this.id = id)
   }
 
   listPosts: Posts[] = [];
@@ -28,7 +34,7 @@ export class PostPageComponent implements OnInit {
     this.getPosts();
   }
 
-  getPosts(): void {
+  getPosts() {
     this.posts.getPostsById(this.id).subscribe((data) => {
       this.listPosts = data;
     })

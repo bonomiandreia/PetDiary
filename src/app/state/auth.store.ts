@@ -5,12 +5,18 @@ import { persistState, PersistStateSelectFn } from '@datorama/akita';
 export interface AuthState {
   token: string;
   id: string;
+  auth: {
+    id: null,
+  }
 }
 
 export function createAuth() {
   return {
     token: null,
-    id: null,
+    auth: {
+      id: null,
+    }
+
   } as AuthState;
 }
 
