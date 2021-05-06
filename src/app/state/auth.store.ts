@@ -5,23 +5,18 @@ import { persistState, PersistStateSelectFn } from '@datorama/akita';
 export interface AuthState {
   token: string;
   id: string;
-  auth: {
-    id: null,
-  }
 }
 
 export function createAuth() {
   return {
     token: null,
-    auth: {
-      id: null,
-    }
+    id: null,
 
   } as AuthState;
 }
 
-const selectToken: PersistStateSelectFn<AuthState> = (state) => ({ token: state.token });
-selectToken.storeName = 'auth';
+//const selectToken: PersistStateSelectFn<AuthState> = (state) => ({ token: state.token });
+//selectToken.storeName = 'auth';
 @Injectable({ providedIn: 'root' })
 @StoreConfig({ name: 'auth', resettable: true })
 
@@ -33,8 +28,8 @@ export class AuthStore extends Store<AuthState> {
   }
 
   setToken(token: string, id: string) {
+    console.log(id)
     this.update({token, id});
-    persistState({ select: [selectToken] });
   }
 
 

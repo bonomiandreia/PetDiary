@@ -18,20 +18,15 @@ import { PostsQuery } from '../../statePosts/posts.query';
 })
 export class PostPageComponent implements OnInit {
   formPosts: FormGroup;
-  id: string;
   idUser$: Observable<string>;
   posts$: Observable<Posts[]>
-  constructor(private posts: PostsService, private fb: FormBuilder, private postsQuery: PostsQuery, public authQuery: AuthQuery, public postsService: PostsServiceAkita) { 
+  constructor(private fb: FormBuilder, private postsQuery: PostsQuery, private postsService: PostsServiceAkita) { 
     
     this.formPosts = this.fb.group({
-      postArea: ['', Validators.compose([Validators.required])],
+      postArea: ['', Validators.required],
     });
-    this.idUser$ = this.authQuery.idUser$;
-    this.idUser$.subscribe(id => this.id = id);
     this.posts$ = this.postsQuery.posts$;
   }
-
-  listPosts: Posts[] = [];
   colums = ['id', 'date', 'text'];
 
   ngOnInit(): void {
@@ -39,24 +34,14 @@ export class PostPageComponent implements OnInit {
   }
 
   getPosts() {
-    this.posts$.subscribe((posts: Posts[]) => {
-      this.postsService.getPostsById(this.id);
-      this.listPosts = posts;
-    })
+    this.postsService.getPostsById();
   }
 
   postDaily(): void { 
-    const date = Date.now();
-    const body = {
-      idUser: this.id,
-      date,
-      text: this.formPosts.value.postArea
+    if (!this.formPosts.valid) {
+      return;
     }
-    if (this.formPosts.value) { 
-      this.postsService.postAddPost(body);
-      this.getPosts();
-    }
-
+    this.postsService.postAddPost(this.formPosts.value.postArea);
 
   }
 

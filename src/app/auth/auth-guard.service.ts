@@ -13,7 +13,7 @@ export class AuthGuardService implements CanLoad {
   canLoad(): boolean {
     this.isLogged$.subscribe(data => {
       if (!data) {
-        this.router.navigate(['login']);
+        this.router.navigate(['/login']);
       }
     })
     return true;

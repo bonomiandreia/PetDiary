@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthServiceAkita } from '../../state/auth.service';
 
 @Component({
@@ -9,14 +8,13 @@ import { AuthServiceAkita } from '../../state/auth.service';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor(public router: Router, private logoutAKita: AuthServiceAkita) { }
+  constructor(private logoutAKita: AuthServiceAkita) { }
 
   ngOnInit(): void {
   }
 
   logout(): void {
     this.logoutAKita.logout();
-    this.router.navigate(['/']);
   }
 
 }

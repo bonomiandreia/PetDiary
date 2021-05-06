@@ -15,7 +15,7 @@ export function createPosts() {
 @Injectable({ providedIn: 'root' })
 @StoreConfig({ name: 'post', resettable: true })
 export class PostsStore extends Store<PostsState> {
-
+  //entityStore
   constructor() {
     super(createPosts());
   }

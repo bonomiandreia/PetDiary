@@ -15,12 +15,13 @@ export class AuthServiceAkita {
   login(body: Login): Subscription {
     return this.http.post(`${environment.url}users/auth`, body).subscribe((data: LoginResponse) => {
       this.authStore.setToken(data.token, data.auth._id)
-      this.router.navigate(['posts']);
+      this.router.navigate(['/posts']);
   })
   }
 
   logout(): void {
-    return this.authStore.reset();
+    this.authStore.update({token: null, id: null});
+    this.router.navigate(['/login']);
   }
 
 }

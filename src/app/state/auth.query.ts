@@ -14,13 +14,15 @@ import { Observable } from 'rxjs';
 export class AuthQuery extends Query<AuthState> {
     readonly isLogged$: Observable<boolean>;
     readonly token$: Observable<string>;
-    readonly idUser$: Observable<string>;
+    readonly idUser: string;
+    readonly idUser$: Observable<string>
 
     constructor(protected store: AuthStore) {
         super(store);
 
         this.isLogged$ = this.select(state => !!state.token);
         this.token$ = this.select('token');
+        this.idUser = this.getValue().id;
         this.idUser$ = this.select('id');
     }
 }

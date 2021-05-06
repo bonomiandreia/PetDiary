@@ -19,7 +19,7 @@
         </mat-card>
         <app-posts 
             class="c-card__table"
-            [list]="listPosts"
+            [list]="posts$ | async"
             [displayedColumns]="colums">
         </app-posts>
     </mat-card>
