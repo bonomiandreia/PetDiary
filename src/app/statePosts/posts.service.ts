@@ -18,7 +18,7 @@ export class PostsServiceAkita {
 
   getPostsById() {
     this.http.get<Posts[]>(`${environment.url}posts/${this.idUser}`).subscribe((data: Posts[]) => {
-      return this.postsStore.setPosts(data);
+      return this.postsStore.setPosts(data.reverse());
     })
   }
 

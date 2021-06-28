@@ -33,7 +33,7 @@ export class AuthStore extends Store<AuthState> {
 
 
   clearStore(): void {
-    this.reset();
+    createAuth();
   }
 
 }
