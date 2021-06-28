@@ -7,10 +7,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { PostPageComponent } from './posts.component';
-import { PostsService } from 'src/app/services/posts/posts.service';
 import { PostsComponent } from 'src/app/components/posts/posts.component';
 import { LogoutComponent } from '../../components/logout/logout.component';
 import { PostsPageRoutingModule } from './posts.routing.module';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
     imports: [
@@ -21,6 +21,7 @@ import { PostsPageRoutingModule } from './posts.routing.module';
         MatGridListModule,
         ReactiveFormsModule,
         PostsPageRoutingModule,
+        MatIconModule
     ],
     declarations: [
         PostPageComponent,
@@ -28,6 +29,6 @@ import { PostsPageRoutingModule } from './posts.routing.module';
         LogoutComponent
     ],
     exports: [PostsComponent],
-    providers: [PostsService, AuthService],
+    providers: [AuthService],
 })
 export class PostsModule {}

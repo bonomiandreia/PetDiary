@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Posts } from 'src/app/models/post.model';
-import { PostsService } from 'src/app/services/posts/posts.service';
-import { AuthQuery } from '../../state/auth.query';
-import { switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { PostsServiceAkita } from '../../statePosts/posts.service';
 import { PostsQuery } from '../../statePosts/posts.query';
