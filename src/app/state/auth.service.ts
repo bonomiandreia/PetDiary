@@ -20,7 +20,7 @@ export class AuthServiceAkita {
   }
 
   logout(): void {
-    this.authStore.update({token: null, id: null});
+    this.authStore.clearStore();
     this.router.navigate(['/login']);
   }
 
