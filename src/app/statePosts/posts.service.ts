@@ -20,6 +20,12 @@ export class PostsServiceAkita {
     })
   }
 
+  deletePostsById(idPost: string) {
+    this.http.delete(`${environment.url}posts/delete/${idPost}`).subscribe(() => {
+      return this.getPostsById();
+    })
+  }
+
   postAddPost(content: string) {
     const body = {
       text: content,

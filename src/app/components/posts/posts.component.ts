@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PostsServiceAkita } from '../../statePosts/posts.service';
 
 @Component({
   selector: 'app-posts',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private postsService: PostsServiceAkita) { }
   @Input() list;
   @Input() displayedColumns;
 
@@ -15,7 +16,7 @@ export class PostsComponent implements OnInit {
 
 
   deletePost(id: string) {
-    console.log(id)
+    this.postsService.deletePostsById(id);
   }
 
 }
