@@ -33,7 +33,7 @@ export class PostsServiceAkita {
       idUser: this.idUser,
     }
     this.http.post<Posts[]>(`${environment.url}posts/create`, body).subscribe((data: Posts[]) => {
-      return this.postsStore.setPosts(data);
+      return this.getPostsById();
     })
   }
 

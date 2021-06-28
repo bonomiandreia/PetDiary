@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PostsServiceAkita } from '../../statePosts/posts.service';
+import { Posts } from '../../models/post.model';
 
 @Component({
   selector: 'app-posts',
@@ -9,7 +10,7 @@ import { PostsServiceAkita } from '../../statePosts/posts.service';
 export class PostsComponent implements OnInit {
 
   constructor(private postsService: PostsServiceAkita) { }
-  @Input() list;
+  @Input() list: Posts[];
   @Input() displayedColumns;
 
   ngOnInit(): void {}

@@ -21,6 +21,7 @@ export class PostsStore extends Store<PostsState> {
   }
 
   setPosts(data: Posts[]): void {
+    console.log(data)
     this.update({ data });
   }
 
