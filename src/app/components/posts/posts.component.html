@@ -22,9 +22,7 @@
     <ng-container matColumnDef="actions">
         <mat-header-cell class="c-table__title" *matHeaderCellDef> ACTIONS </mat-header-cell>
         <mat-cell *matCellDef="let element"> 
-            <button>
-                <span class="material-icons" (click)="deletePost(element?._id)">delete</span>
-            </button>
+            <span class="material-icons c-table__title-delete" (click)="deletePost(element?._id)">delete</span>
         </mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
