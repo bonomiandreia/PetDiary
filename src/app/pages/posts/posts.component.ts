@@ -27,7 +27,7 @@ export class PostPageComponent implements OnInit {
     });
     this.posts$ = this.postsQuery.posts$;
   }
-  colums = ['id', 'date', 'text'];
+  colums = ['id', 'date', 'text', 'actions'];
 
   ngOnInit(): void {
     this.getPosts();

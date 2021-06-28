@@ -13,4 +13,9 @@ export class PostsComponent implements OnInit {
 
   ngOnInit(): void {}
 
+
+  deletePost(id: string) {
+    console.log(id)
+  }
+
 }
