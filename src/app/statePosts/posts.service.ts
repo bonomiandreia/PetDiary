@@ -12,12 +12,11 @@ import { Observable } from 'rxjs';
 export class PostsServiceAkita { 
   idUser: string
   constructor(private postsStore: PostsStore, private http: HttpClient, private authQuery: AuthQuery) {
-    this.authQuery.idUser$.subscribe(id => this.idUser = id)
+    this.idUser = this.authQuery.getValue().id;
   }
 
 
   getPostsById() {
-    console.log('texto', this.authQuery.idUser)
     this.http.get<Posts[]>(`${environment.url}posts/${this.idUser}`).subscribe((data: Posts[]) => {
       return this.postsStore.setPosts(data);
     })
@@ -27,7 +26,7 @@ export class PostsServiceAkita {
     const body = {
       text: content,
       date: Date.now(),
-      idUser: this.authQuery.idUser,
+      idUser: this.idUser,
     }
     this.http.post<Posts[]>(`${environment.url}posts/create`, body).subscribe((data: Posts[]) => {
       return this.postsStore.setPosts(data);

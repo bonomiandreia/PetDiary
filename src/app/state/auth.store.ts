@@ -28,7 +28,6 @@ export class AuthStore extends Store<AuthState> {
   }
 
   setToken(token: string, id: string) {
-    console.log(id)
     this.update({token, id});
   }
 
