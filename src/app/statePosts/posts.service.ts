@@ -4,8 +4,6 @@ import { PostsStore } from './posts.store';
 import { environment } from '../../environments/environment';
 import { Posts } from 'src/app/models/post.model';
 import { AuthQuery } from '../state/auth.query';
-import { Observable } from 'rxjs';
-
 
 
 @Injectable({ providedIn: 'root' })
