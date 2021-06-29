@@ -10,10 +10,10 @@ import { CreateAccountService } from '../../services/create-account.service';
 })
 export class CreateAccountComponent implements OnInit {
 
-  formLogin: FormGroup;
+  formCreateAccount: FormGroup;
 
   constructor(public router: Router, private fb: FormBuilder, private serviceCreateAccount: CreateAccountService) {
-    this.formLogin = this.fb.group({
+    this.formCreateAccount = this.fb.group({
       email: ['', Validators.compose([Validators.email])],
       password: ['', Validators.compose([Validators.required])],
     });
@@ -24,10 +24,10 @@ export class CreateAccountComponent implements OnInit {
 
   create(): void {
 
-    if (this.formLogin.value) {
+    if (this.formCreateAccount.value) {
       const body = {
-        "email": this.formLogin.value.email,
-        "password": this.formLogin.value.password
+        "email": this.formCreateAccount.value.email,
+        "password": this.formCreateAccount.value.password
       }
       this.serviceCreateAccount.create(body);
     }

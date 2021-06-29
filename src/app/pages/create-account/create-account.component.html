@@ -1,11 +1,11 @@
 <div class="c-card">
     <mat-card class="c-card__white-card">
-        <form [formGroup]="formLogin" (ngSubmit)="create()">
+        <form [formGroup]="formCreateAccount" (ngSubmit)="create()">
             <span class="c-card__title">CREATE A NEW ACCOUNT!</span><br>
             <input placeholder="email here..." type="text" formControlName="email"><br>
             <input placeholder="password here..." type="password" id="password" name="fpassword" formControlName="password">
             <br>
-            <button [disabled]="!formLogin.valid">ENTER</button>
+            <button [disabled]="!formCreateAccount.valid">ENTER</button>
             <br>
             <br>
             <button (click)="backToLogin()"> Back to login! </button>
