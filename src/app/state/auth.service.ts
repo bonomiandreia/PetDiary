@@ -14,7 +14,7 @@ export class AuthServiceAkita {
 
   login(body: Login): Subscription {
     return this.http.post(`${environment.url}users/auth`, body).subscribe((data: LoginResponse) => {
-      this.authStore.setToken(data.token, data.auth._id)
+      this.authStore.setToken(data.token, data.auth._id, data.auth.email)
       this.router.navigate(['/posts']);
     })
   }

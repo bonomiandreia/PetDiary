@@ -5,12 +5,14 @@ import { persistState, PersistStateSelectFn } from '@datorama/akita';
 export interface AuthState {
   token: string;
   id: string;
+  email: string;
 }
 
 export function createAuth() {
   return {
     token: null,
     id: null,
+    email: null,
 
   } as AuthState;
 }
@@ -27,8 +29,8 @@ export class AuthStore extends Store<AuthState> {
     super(createAuth());
   }
 
-  setToken(token: string, id: string) {
-    this.update({token, id});
+  setToken(token: string, id: string, email: string) {
+    this.update({token, id, email});
   }
 
 

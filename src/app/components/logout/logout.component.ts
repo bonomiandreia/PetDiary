@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthServiceAkita } from '../../state/auth.service';
+import { AuthQuery } from '../../state/auth.query';
 
 @Component({
   selector: 'app-logout',
@@ -8,7 +9,13 @@ import { AuthServiceAkita } from '../../state/auth.service';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor(private logoutAKita: AuthServiceAkita) { }
+  email: string;
+
+  constructor(private logoutAKita: AuthServiceAkita, akitaQuery: AuthQuery) {
+
+    this.email = akitaQuery.getValue().email;
+    console.log(this.email)
+   }
 
   ngOnInit(): void {
   }
