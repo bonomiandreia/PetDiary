@@ -8,6 +8,13 @@
                 <input placeholder="password here..." type="password" id="password" name="fpassword" formControlName="password">
                 <br>
                 <button [disabled]="!formLogin.valid">ENTER</button>
+                <br>
+                <br>
+                <div class="c-card__newAccount">
+                    <span>Doesn’t have a account yet?</span>
+                </div>
+                <br>
+                <button (click)="createNewAccount()">CREATE NEW ACCOUNT!</button>
             </form>
         </mat-grid-tile>
             <mat-grid-tile>
