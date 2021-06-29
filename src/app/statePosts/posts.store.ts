@@ -24,4 +24,8 @@ export class PostsStore extends Store<PostsState> {
     this.update({ data });
   }
 
+  resetPosts(): void {
+    this.reset();
+  }
+
 }

@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { EntityState, Store, StoreConfig } from '@datorama/akita';
-import { persistState, PersistStateSelectFn } from '@datorama/akita';
-
+import { Store, StoreConfig } from '@datorama/akita';
 export interface AuthState {
   token: string;
   id: string;
@@ -35,7 +33,7 @@ export class AuthStore extends Store<AuthState> {
 
 
   clearStore(): void {
-    createAuth();
+    this.reset();
   }
 
 }

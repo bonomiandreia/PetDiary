@@ -16,7 +16,7 @@ export class PostsServiceAkita {
 
   getPostsById() {
     this.http.get<Posts[]>(`${environment.url}posts/${this.idUser}`).subscribe((data: Posts[]) => {
-      return this.postsStore.setPosts(data.reverse());
+      return this.postsStore.setPosts(data);
     })
   }
 
@@ -35,6 +35,10 @@ export class PostsServiceAkita {
     this.http.post<Posts[]>(`${environment.url}posts/create`, body).subscribe((data: Posts[]) => {
       return this.getPostsById();
     })
+  }
+
+  deletePosts(): void {
+    this.postsStore.reset();
   }
 
 
