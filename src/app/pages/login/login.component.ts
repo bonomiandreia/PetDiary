@@ -35,7 +35,6 @@ export class LoginComponent {
 
   createNewAccount(): void {
     this.router.navigate(['/create-account']);
-    console.log('here')
   }
 
 }
