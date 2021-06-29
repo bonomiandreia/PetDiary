@@ -4,6 +4,7 @@ import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
 
 export const ROUTES: Routes = [
   { path: 'login', loadChildren: () => import('./pages/login/login.module').then(module => module.LoginModule)},
+  { path: 'create-account', loadChildren: () => import('./pages/create-account/create-account.module').then(module => module.CreateAccountModule)},
   { 
     path: 'posts', 
     loadChildren: () => import('./pages/posts/posts.module').then(module => module.PostsModule),

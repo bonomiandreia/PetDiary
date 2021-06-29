@@ -15,13 +15,11 @@ import { TokenInterceptor } from './interceptor/token-interceptor';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { environment } from '../environments/environment';
 import { AuthQuery } from './state/auth.query';
-import { CreateAccountComponent } from './pages/create-account/create-account/create-account.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateAccountComponent,
   ],
   imports: [
 
