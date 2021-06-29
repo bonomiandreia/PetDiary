@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵCompiler_compileModuleSync__POST_R3__ } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthServiceAkita } from '../../state/auth.service';
 import {
@@ -34,7 +34,8 @@ export class LoginComponent {
   }
 
   createNewAccount(): void {
-
+    this.router.navigate(['/create-account']);
+    console.log('here')
   }
 
 }
