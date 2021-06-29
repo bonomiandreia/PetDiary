@@ -15,6 +15,7 @@ import { TokenInterceptor } from './interceptor/token-interceptor';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { environment } from '../environments/environment';
 import { AuthQuery } from './state/auth.query';
+import { persistState } from '@datorama/akita';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { AuthQuery } from './state/auth.query';
     BrowserAnimationsModule,
     MatTableModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
   ],
   providers: [
     AuthGuardService, 
