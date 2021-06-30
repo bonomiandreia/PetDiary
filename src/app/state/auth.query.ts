@@ -15,12 +15,15 @@ export class AuthQuery extends Query<AuthState> {
     readonly idUser$: Observable<string>;
     readonly email$: Observable<string>;
 
+    readonly auth$: Observable<AuthState>
+
+    
+
     constructor(protected store: AuthStore) {
         super(store);
 
         this.isLogged$ = this.select(state => !!state.token);
-        this.token$ = this.select('token');
-        this.idUser$ = this.select('id');
-        this.email$ = this.select('email');
+        this.auth$ = this.select(state => state);
+        this.token$ = this.select(state => state.token);
     }
 }

@@ -1,18 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Store, StoreConfig } from '@datorama/akita';
 export interface AuthState {
-  token: string;
-  id: string;
-  email: string;
+  auth: {
+    _id: string;
+    email: string;
+  }
+  token: string
+
 }
 
 export function createAuth() {
-  return {
-    token: null,
-    id: null,
-    email: null,
-
-  } as AuthState;
+  return {} as AuthState;
 }
 
 //const selectToken: PersistStateSelectFn<AuthState> = (state) => ({ token: state.token });
@@ -25,15 +23,6 @@ export class AuthStore extends Store<AuthState> {
 
   constructor() {
     super(createAuth());
-  }
-
-  setToken(token: string, id: string, email: string) {
-    this.update({token, id, email});
-  }
-
-
-  clearStore(): void {
-    createAuth()
   }
 
 }

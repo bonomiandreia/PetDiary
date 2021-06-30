@@ -13,7 +13,7 @@ export class LogoutComponent implements OnInit {
   email: string;
 
   constructor(private logoutAKita: AuthServiceAkita, akitaQuery: AuthQuery, private postsService: PostsServiceAkita) {
-    this.email = akitaQuery.getValue().email;
+    this.email = akitaQuery.getValue().auth.email;
    }
 
   ngOnInit(): void {

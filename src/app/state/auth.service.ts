@@ -12,9 +12,9 @@ export class AuthServiceAkita {
   constructor(private authStore: AuthStore, private http: HttpClient, private router: Router) {
   }
 
-  login(body: Login): Subscription {
-    return this.http.post(`${environment.url}users/auth`, body).subscribe((data: LoginResponse) => {
-      this.authStore.setToken(data.token, data.auth._id, data.auth.email)
+  login(body: Login) {
+    this.http.post<LoginResponse>(`${environment.url}users/auth`, body).subscribe((data: LoginResponse) => {
+      this.authStore.update(data)
       this.router.navigate(['/posts']);
     })
   }
