@@ -25,7 +25,7 @@ export class PostPageComponent implements OnInit {
     });
     this.posts$ = this.postsQuery.posts$;
 
-    this.idUser = this.authQuery.getValue().id
+    this.idUser = this.authQuery.getValue().auth._id
   }
   colums = ['id', 'date', 'text', 'actions'];
 

@@ -16,7 +16,7 @@ export class LoginComponent {
   token: string;
   id: string;
 
-  constructor(private fb: FormBuilder, public router: Router, public login: AuthServiceAkita) { 
+  constructor(private fb: FormBuilder, public router: Router, public loginService: AuthServiceAkita) { 
     this.formLogin = this.fb.group({
       email: ['', Validators.compose([Validators.email])],
       password: ['', Validators.compose([Validators.required])],
@@ -29,7 +29,7 @@ export class LoginComponent {
         "email": this.formLogin.value.email,
         "password": this.formLogin.value.password
       }
-      this.login.login(body);
+      this.loginService.login(body);
     }
   }
 
