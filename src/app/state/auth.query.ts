@@ -9,12 +9,9 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-
-@StoreConfig({ name: 'token' })
 export class AuthQuery extends Query<AuthState> {
     readonly isLogged$: Observable<boolean>;
     readonly token$: Observable<string>;
-    readonly idUser: string;
     readonly idUser$: Observable<string>;
     readonly email$: Observable<string>;
 
@@ -23,7 +20,6 @@ export class AuthQuery extends Query<AuthState> {
 
         this.isLogged$ = this.select(state => !!state.token);
         this.token$ = this.select('token');
-        this.idUser = this.getValue().id;
         this.idUser$ = this.select('id');
         this.email$ = this.select('email');
     }
