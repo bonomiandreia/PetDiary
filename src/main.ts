@@ -7,13 +7,11 @@ import { persistState } from '@datorama/akita';
 import { akitaConfig } from "@datorama/akita";
 import { throwError } from 'rxjs';
 
-persistState({
+
+
+export const storage = persistState({
   include: ['auth'],
 });
-
-platformBrowserDynamic()
-    .bootstrapModule(AppModule)
-    .catch(err => throwError(err));
 
 akitaConfig({
   resettable: true
