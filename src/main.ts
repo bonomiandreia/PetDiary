@@ -21,5 +21,5 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
+platformBrowserDynamic([{ provide: 'persistStorage', useValue: storage }]).bootstrapModule(AppModule)
   .catch(err => console.error(err));
